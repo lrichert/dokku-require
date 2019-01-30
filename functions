@@ -69,7 +69,7 @@ require_add_volumes() {
       
       # "phases" key is optional
       set +eo pipefail
-      PHASES=$(require_get_app_plugins "[\"$DOKKU_REQUIRE_PREFIX\"][\"volumes\"][${COUNT}][\"phases\"]" < "$APP_JSON_FILE" 2>&1)
+      PHASES=$(require_get_app_plugins "[\"$DOKKU_REQUIRE_PREFIX\"][\"volumes\"][${COUNT}][\"phases\"]" < "$APP_JSON_FILE" 2>/dev/null)
       set -eo pipefail
       
       if [[ -z "$PHASES" ]]; then 
